@@ -1,6 +1,7 @@
 package com.stackndqueues;
 
 public class Node {
+
 	public int data;
 	public Node next;
 
@@ -9,4 +10,4 @@ public class Node {
 		this.next = null;
 
 	}
-}s
+}
