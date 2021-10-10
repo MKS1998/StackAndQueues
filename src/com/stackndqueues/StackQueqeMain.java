@@ -1,42 +1,29 @@
 package com.stackndqueues;
 
+import java.util.Scanner;
 public class StackQueqeMain {
-	Node head;
-	Node tail;
-	Node top;
+    public static void main(String[] args) {
+        System.out.println("Welcome to the data Structure in 'Stack and Queqe' Program!!");
+        @SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+        System.out.println("Press '1' to add element at the start");
+        System.out.println("Press '2' to peek the element");
+        System.out.println("Press '3' to pop the element");
+        switch (sc.nextInt()) {
+            case 1:
+                Operation.addElement();
+                break;
+            case 2:
+                Operation.peek();
+                break;
 
-	public Node push(int data) {
-		Node newnode = new Node(data);
-
-		if (head == null) {
-			head = newnode;
-			tail = newnode;
-		} else {
-			Node tempNode = head;
-			this.head = newnode;
-			newnode.next = tempNode;
-		}
-		top = head;
-		return newnode;
-	}
-
-	public void display() {
-		if (head == null) {
-			System.out.println("Linked list is Empty");
-			return;
-		} else {
-			System.out.print("\n The stack elements are ");
-			Node tempNode = head;
-			while (tempNode != null) {
-				if (tempNode.next != null) {
-					System.out.print(tempNode.data + " -> ");
-					tempNode = tempNode.next;
-				} else {
-					System.out.print(tempNode.data);
-					tempNode = tempNode.next;
-				}
-			}
-		}
-
-	}
+            case 3:
+                Operation.pop();
+                break;
+            default:
+            {
+                System.out.println("Press Valid Key");
+            }
+        }
+    }
 }
